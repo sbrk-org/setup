@@ -6,7 +6,7 @@
 
     ansible-galaxy collection install community.general
 
-### Remove server
+### Remote server
 
 Have a user that can ssh, is in sudoers, and doesn't need a password.
 
