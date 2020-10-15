@@ -1,0 +1,6 @@
+---
+
+- name: setup all roles on sbrk
+  hosts: all
+  roles:
+    - base

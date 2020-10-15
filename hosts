@@ -1,0 +1,7 @@
+[server]
+
+neuromancer ansible_host=163.172.87.245 ansible_user=mxs
+
+[all:vars]
+
+ansible_python_interpreter=/usr/bin/python3
