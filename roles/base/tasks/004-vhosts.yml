@@ -1,0 +1,24 @@
+---
+
+- name: set up virtualhost main directories
+  file:
+    owner: "http"
+    path: "/srv/http/{{ item.domain }}"
+    state: directory
+    mode: 0755
+  loop: "{{ websites }}"
+
+- name: set up virtualhost log directories
+  file:
+    owner: "http"
+    path: "/srv/http/{{ item.domain }}/log"
+    state: directory
+    mode: 0750
+  loop: "{{ websites }}"
+
+- name: set up virtualhosts
+  template:
+    owner: http
+    src: "templates/{{ item.template_config }}"
+    dest: "/srv/http/{{ item.domain }}/nginx.conf"
+  loop: "{{ websites }}"

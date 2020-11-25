@@ -1,8 +1,21 @@
 ---
 
-# Unix users to create
-
+# Unix users to create. All users defined here are root users (access
+# to docker as well as wheel).
 users:
   - mxs
   - faltad
   - ironzorg
+
+# Domains & services to manage.
+#
+# Config:
+#
+# - domain: domain for which to generate an SSL certificate,
+# - type: template configuration used the generate the config.
+#
+# Other entries are directly passed to the template configuration.
+websites:
+  - domain: blz.sbrk.org
+    template_config: proxy_local_port.skeleton
+    local_port: 10001
