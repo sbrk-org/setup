@@ -4,8 +4,8 @@ server {
        listen 80;
        listen [::]:80;
 
-       access_log /srv/http/{{ item.domain }}/logs/reverse-access.log;
-       error_log /srv/http/{{ item.domain }}/logs/reverse-error.log;
+       access_log /srv/http/{{ item.domain }}/log/reverse-access.log;
+       error_log /srv/http/{{ item.domain }}/log/reverse-error.log;
 
        location / {
        		proxy_pass http://127.0.0.1:{{ item.local_port }};

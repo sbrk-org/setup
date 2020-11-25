@@ -8,6 +8,8 @@
       - docker
       - docker-compose
       - nginx
+      - community/certbot
+      - community/certbot-nginx
     state: present
     update_cache: yes
 

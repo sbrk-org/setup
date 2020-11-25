@@ -1,16 +1,16 @@
 ---
 
-- name: set up virtualhost main directories
+- name: set up virtualhost main directory
   file:
-    owner: "http"
+    owner: http
     path: "/srv/http/{{ item.domain }}"
     state: directory
     mode: 0755
   loop: "{{ websites }}"
 
-- name: set up virtualhost log directories
+- name: set up virtualhost log directory
   file:
-    owner: "http"
+    owner: http
     path: "/srv/http/{{ item.domain }}/log"
     state: directory
     mode: 0750
@@ -23,7 +23,10 @@
     dest: "/srv/http/{{ item.domain }}/nginx.conf"
   loop: "{{ websites }}"
 
-- name: enable virtualhosts
+- name: create certificates
+  command: certbot run --expand --email mxs@sbrk.org -d "{{ websites|map(attribute='domain')|join(',') }}"
+
+- name: enable virtualhost
   file:
     src: "/srv/http/{{ item.domain }}/nginx.conf"
     dest: "/etc/nginx/sites-enabled/{{ item.domain }}.conf"
