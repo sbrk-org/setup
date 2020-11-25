@@ -7,5 +7,7 @@
       - emacs-nox
       - docker
       - docker-compose
+      - nginx
     state: present
     update_cache: yes
+
