@@ -1,0 +1,15 @@
+---
+
+- name: enable docker
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
+
+- name: add users to docker group
+  user:
+    name: "{{ item }}"
+    groups: docker
+    append: yes
+  loop: "{{ users }}"
+
