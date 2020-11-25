@@ -22,3 +22,12 @@
     src: "templates/{{ item.template_config }}"
     dest: "/srv/http/{{ item.domain }}/nginx.conf"
   loop: "{{ websites }}"
+
+- name: enable virtualhosts
+  file:
+    src: "/srv/http/{{ item.domain }}/nginx.conf"
+    dest: "/etc/nginx/sites-enabled/{{ item.domain }}.conf"
+    owner: http
+    group: http
+    state: link
+  loop: "{{ websites }}"
