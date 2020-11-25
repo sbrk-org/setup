@@ -5,5 +5,7 @@
     name:
       - htop
       - emacs-nox
+      - docker
+      - docker-compose
     state: present
     update_cache: yes
