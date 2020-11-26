@@ -21,7 +21,13 @@ server {
     access_log /srv/http/{{ item.domain }}/log/reverse-access.log;
     error_log /srv/http/{{ item.domain }}/log/reverse-error.log;
 
+    root /srv/http/{{ item.domain }}/public;
+
+    location ~ /\. {
+        deny all;
+    }
+
     location / {
-        proxy_pass http://127.0.0.1:{{ item.local_port }};
+        index index.html;
     }
 }
