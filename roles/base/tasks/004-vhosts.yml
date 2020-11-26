@@ -24,7 +24,7 @@
   loop: "{{ websites }}"
 
 - name: create certificates
-  command: certbot run --expand --email mxs@sbrk.org -d "{{ websites|map(attribute='domain')|join(',') }}"
+  command: certbot run --nginx --keep-until-expiring --expand --email mxs@sbrk.org -d "{{ websites|map(attribute='domain')|join(',') }}"
 
 - name: enable virtualhost
   file:
