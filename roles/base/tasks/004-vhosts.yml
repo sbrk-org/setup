@@ -23,9 +23,6 @@
     dest: "/srv/http/{{ item.domain }}/nginx.conf"
   loop: "{{ websites }}"
 
-- name: create certificates
-  command: certbot run --keep-until-expiring --expand --email mxs@sbrk.org -d "{{ websites|map(attribute='domain')|join(',') }}"
-
 - name: enable virtualhost
   file:
     src: "/srv/http/{{ item.domain }}/nginx.conf"
@@ -34,3 +31,6 @@
     group: http
     state: link
   loop: "{{ websites }}"
+
+- name: create certificates
+  command: certbot --nginx --keep-until-expiring --expand --email mxs@sbrk.org -d "{{ websites|map(attribute='domain')|join(',') }}"
