@@ -25,3 +25,7 @@ websites:
   - domain: blz.sbrk.org
     template_config: proxy_local_port.skeleton
     local_port: 10001
+
+  - domain: calendrier.sbrk.org
+    template_config: proxy_local_port.skeleton
+    local_port: 1313
