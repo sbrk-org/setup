@@ -10,6 +10,7 @@
       - nginx
       - community/certbot
       - community/certbot-nginx
+      - hugo
     state: present
     update_cache: yes
 
