@@ -28,7 +28,7 @@ websites:
 
   - domain: sandwalker.sbrk.org
     template_config: proxy_local_port.skeleton
-    local_port: 6000
+    local_port: 10002
 
   - domain: calendrier.sbrk.org
     template_config: proxy_local_port.skeleton
