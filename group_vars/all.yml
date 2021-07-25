@@ -33,3 +33,7 @@ websites:
   - domain: calendrier.sbrk.org
     template_config: proxy_local_port.skeleton
     local_port: 1313
+
+  - domain: landing.mxs.sbrk.org
+    template_config: static.skeleton
+    data: /srv/http/landing.mxs.sbrk.org/public
