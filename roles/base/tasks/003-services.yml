@@ -4,7 +4,6 @@
   systemd:
     name: docker
     enabled: yes
-    state: started
 
 - name: add users to docker group
   user:
@@ -17,4 +16,3 @@
   systemd:
     name: nginx
     enabled: yes
-    state: started

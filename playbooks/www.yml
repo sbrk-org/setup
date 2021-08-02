@@ -1,8 +1,7 @@
 ---
 
-- name: setup all roles on sbrk
+- name: setup virtualhosts and certificates
   hosts: all
   roles:
-    - base
     - virtualhosts
     - certificates
