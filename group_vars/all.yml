@@ -39,3 +39,7 @@ websites:
   - domain: landing.mxs.sbrk.org
     template_config: proxy_local_port.skeleton
     local_port: 10004
+
+  - domain: detours.mxs.sbrk.org
+    template_config: proxy_local_port.skeleton
+    local_port: 10005
