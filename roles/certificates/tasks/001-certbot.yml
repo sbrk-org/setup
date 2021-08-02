@@ -1,14 +1,19 @@
 ---
 
+# This is a bit weird:
+#
+# - certbot needs nginx to be down to work (i.e: no port open on 80/443)
+# - certbot automatically starts nginx after having generated certificates
+#
+# So we need to stop nginx, but not start it afterwards as it will
+# fail. We ignore failures on stopped services in case we are messing
+# around with nginx at the same time. This is a bit flaky.
+
 - name: stopping nginx
+  ignore_errors: yes
   ansible.builtin.systemd:
     name: nginx.service
     state: stopped
   
 - name: create certificates
   command: certbot --nginx --keep-until-expiring --expand --email mxs@sbrk.org -d "{{ websites|map(attribute='domain')|join(',') }}"
-
-- name: starting nginx
-  ansible.builtin.systemd:
-    name: nginx.service
-    state: started
