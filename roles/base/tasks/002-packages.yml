@@ -11,6 +11,6 @@
       - community/certbot
       - community/certbot-nginx
       - hugo
+      - lsof
     state: present
     update_cache: yes
-
