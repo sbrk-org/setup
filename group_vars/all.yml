@@ -40,6 +40,6 @@ websites:
     template_config: proxy_local_port.skeleton
     local_port: 10004
 
-  - domain: detours.mxs.sbrk.org
+  - domain: detours.sbrk.org
     template_config: proxy_local_port.skeleton
     local_port: 10005
