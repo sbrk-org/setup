@@ -43,3 +43,7 @@ websites:
   - domain: detours.sbrk.org
     template_config: proxy_local_port.skeleton
     local_port: 10005
+
+  - domain: data.mxs.sbrk.org
+    template_config: proxy_local_port.skeleton
+    local_port: 10006
