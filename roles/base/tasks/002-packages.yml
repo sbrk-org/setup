@@ -2,6 +2,7 @@
 
 - name: set up standard packages
   apt:
+    state: present
     pkg:
       - htop
       - emacs-nox
@@ -12,3 +13,9 @@
       - python3-certbot-nginx
       - hugo
       - lsof
+      - mosh
+      - tmux
+      - zsh
+      - kakoune
+      - kitty-terminfo
+
