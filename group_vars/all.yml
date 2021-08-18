@@ -47,3 +47,9 @@ websites:
   - domain: data.mxs.sbrk.org
     template_config: proxy_local_port.skeleton
     local_port: 10006
+
+  - domain: aimxhaisse.com
+    template_config: proxy_local_port_with_landing.skeleton
+    local_port: 10003
+    landing_port: 10004
+    landing_static: highlander
