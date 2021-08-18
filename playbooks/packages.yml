@@ -1,0 +1,6 @@
+---
+
+- name: setup packages and users
+  hosts: all
+  roles:
+    - base
