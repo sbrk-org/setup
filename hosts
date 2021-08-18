@@ -1,6 +1,6 @@
 [server]
 
-neuromancer ansible_host=163.172.87.245 ansible_user=mxs
+neuromancer ansible_host=176.31.234.230 ansible_user=debian
 
 [all:vars]
 

@@ -1,16 +1,14 @@
 ---
 
 - name: set up standard packages
-  community.general.pacman:
-    name:
+  apt:
+    pkg:
       - htop
       - emacs-nox
       - docker
       - docker-compose
       - nginx
-      - community/certbot
-      - community/certbot-nginx
+      - certbot
+      - python3-certbot-nginx
       - hugo
       - lsof
-    state: present
-    update_cache: yes

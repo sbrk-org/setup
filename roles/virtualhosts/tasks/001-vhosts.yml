@@ -2,7 +2,7 @@
 
 - name: set up virtualhost main directory
   file:
-    owner: http
+    owner: www-data
     path: "/srv/http/{{ item.domain }}"
     state: directory
     mode: 0755
@@ -10,7 +10,7 @@
 
 - name: set up virtualhost log directory
   file:
-    owner: http
+    owner: www-data
     path: "/srv/http/{{ item.domain }}/log"
     state: directory
     mode: 0750
@@ -18,7 +18,7 @@
 
 - name: set up virtualhosts
   template:
-    owner: http
+    owner: www-data
     src: "templates/{{ item.template_config }}"
     dest: "/srv/http/{{ item.domain }}/nginx.conf"
   loop: "{{ websites }}"
@@ -27,7 +27,7 @@
   file:
     src: "/srv/http/{{ item.domain }}/nginx.conf"
     dest: "/etc/nginx/sites-enabled/{{ item.domain }}.conf"
-    owner: http
-    group: http
+    owner: www-data
+    group: www-data
     state: link
   loop: "{{ websites }}"

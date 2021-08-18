@@ -18,9 +18,9 @@ users:
 # Other entries are directly passed to the template configuration.
 websites:
 
-  - domain: neuromancer.sbrk.org
+  - domain: necromancer.sbrk.org
     template_config: static.skeleton
-    data: /srv/http/neuromancer.sbrk.org/public
+    data: /srv/http/necromancer.sbrk.org/public
 
   - domain: blz.sbrk.org
     template_config: proxy_local_port.skeleton
