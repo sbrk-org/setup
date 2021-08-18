@@ -1,6 +1,6 @@
 [server]
 
-neuromancer ansible_host=176.31.234.230 ansible_user=debian
+necromancer ansible_host=176.31.234.230 ansible_user=debian
 
 [all:vars]
 
