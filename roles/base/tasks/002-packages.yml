@@ -21,4 +21,4 @@
       - weechat
       - yaml-mode
       - sqlite3
-
+      - libpam-systemd
