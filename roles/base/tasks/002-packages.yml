@@ -4,25 +4,25 @@
   apt:
     state: present
     pkg:
-      - htop
-      - emacs-nox
       - docker
       - docker-compose
+      - emacs-nox
+      - ftp
+      - htop
       - hugo
-      - lsof
-      - mosh
-      - tmux
-      - zsh
       - kakoune
       - kitty-terminfo
-      - weechat
-      - yaml-mode
-      - sqlite3
       - libpam-systemd
-      - ftp
-      - netcat
-      - tig
+      - lsof
+      - man-db
       - manpages
       - manpages-dev
-      - man-db
+      - mosh
+      - netcat
       - silversearcher-ag
+      - sqlite3
+      - tig
+      - tmux
+      - weechat
+      - yaml-mode
+      - zsh
