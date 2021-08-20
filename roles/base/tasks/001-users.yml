@@ -1,7 +1,7 @@
 ---
 
 - name: create unix users
-  user: name="{{ item }}" append=yes state=present createhome=yes shell=/bin/bash groups=sudo
+  user: name="{{ item }}" append=yes state=present createhome=yes groups=sudo
   loop: "{{ users }}"
 
 - name: set up ssh authorized keys
