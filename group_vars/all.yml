@@ -63,3 +63,13 @@ websites:
   - domain: an-aer.bzh
     template_config: proxy_local_port.skeleton
     local_port: 10008
+
+  - domain: matrix.sbrk.org
+    template_config: proxy_local_port.skeleton
+    local_port: 11001
+    secure_headers: true
+
+  - domain: matrix-web.sbrk.org
+    template_config: proxy_local_port.skeleton
+    local_port: 11002
+    secure_headers: true
