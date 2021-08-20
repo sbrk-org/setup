@@ -20,3 +20,5 @@
       - kitty-terminfo
       - weechat
       - yaml-mode
+      - sqlite3
+
