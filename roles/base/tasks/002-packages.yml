@@ -22,3 +22,7 @@
       - ftp
       - netcat
       - tig
+      - manpages
+      - manpages-dev
+      - man-db
+      - silversearcher-ag
