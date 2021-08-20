@@ -19,4 +19,4 @@
       - kakoune
       - kitty-terminfo
       - weechat
-
+      - yaml-mode
