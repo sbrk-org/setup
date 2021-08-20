@@ -7,3 +7,12 @@
 - name: set up ssh authorized keys
   authorized_key: user="{{ item }}" key="{{ lookup('file', 'files/user-' + item + '.pub') }}"
   loop: "{{ users }}"
+
+- name: enable systemd lingering for users
+  ansible.builtin.file:
+    path: /var/lib/systemd/linger/{{ item }}
+    state: touch
+    mode: 644
+    owner: root
+    group: root
+  loop: "{{ users }}"
