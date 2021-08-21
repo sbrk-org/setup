@@ -6,3 +6,4 @@
     - base
     - virtualhosts
     - certificates
+    - wireguard

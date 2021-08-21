@@ -1,0 +1,4 @@
+---
+
+- include_tasks: 001-wireguard.yml
+- include_tasks: 002-easy-wg-quick.yml
