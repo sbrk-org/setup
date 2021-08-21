@@ -1,0 +1,64 @@
+---
+
+- name: create the easy-wg-quick binary directory
+  file:
+    owner: root
+    group: root
+    path: "/opt/easy-wg-quick"
+    state: directory
+    mode: 0755
+
+- name: download the easy-wg-quick binary
+  get_url:
+    dest: "/opt/easy-wg-quick/easy-wg-quick"
+    owner: root
+    group: root
+    mode: 0750
+    url: "https://raw.githubusercontent.com/burghardt/easy-wg-quick/master/easy-wg-quick"
+
+- name: create the easy-wg-quick data directory
+  file:
+    owner: root
+    group: root
+    path: "/srv/easy-wg-quick"
+    state: directory
+    mode: 0750
+
+- name: set the default Wireguard network prefix
+  copy:
+    content: "10.10.10."
+    dest: "/srv/easy-wg-quick/intnetaddress.txt"
+    mode: 0640
+
+- name: set the default Wireguard network mask
+  copy:
+    content: "/24"
+    dest: "/srv/easy-wg-quick/intnetmask.txt"
+    mode: 0640
+
+- name: set the default Wireguard firewall type
+  copy:
+    content: "custom"
+    dest: "/srv/easy-wg-quick/fwtype.txt"
+    mode: 0640
+
+- name: set the default Wireguard firewall rules
+  copy:
+    content: |
+      PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE
+      PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE
+    dest: "/srv/easy-wg-quick/commands.txt"
+    mode: 0640
+
+- name: set the default Wireguard sysctl controls
+  copy:
+    content: "none"
+    dest: "/srv/easy-wg-quick/sysctltype.txt"
+    mode: 0640
+
+- name: enable the default easy-wg-quick configuration
+  file:
+    state: link
+    force: yes
+    src: "/srv/easy-wg-quick/wghub.conf"
+    dest: "/etc/wireguard/wghub.conf"
