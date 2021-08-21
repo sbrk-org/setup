@@ -57,3 +57,7 @@ websites:
   - domain: sbrk.org
     template_config: proxy_local_port.skeleton
     local_port: 10007
+
+  - domain: an-aer.bzh
+    template_config: proxy_local_port.skeleton
+    local_port: 10008
