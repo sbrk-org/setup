@@ -1,5 +1,11 @@
 ---
 
+- name: install dependencies
+  apt:
+    state: present
+    pkg:
+      - nginx
+
 - name: set up virtualhost main directory
   file:
     owner: www-data
