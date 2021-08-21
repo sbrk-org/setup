@@ -9,6 +9,14 @@
 # fail. We ignore failures on stopped services in case we are messing
 # around with nginx at the same time. This is a bit flaky.
 
+- name: install dependencies
+  apt:
+    state: present
+    pkg:
+      - certbot
+      - nginx
+      - python3-certbot-nginx
+
 - name: stopping nginx
   ignore_errors: yes
   ansible.builtin.systemd:

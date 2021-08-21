@@ -8,9 +8,6 @@
       - emacs-nox
       - docker
       - docker-compose
-      - nginx
-      - certbot
-      - python3-certbot-nginx
       - hugo
       - lsof
       - mosh
