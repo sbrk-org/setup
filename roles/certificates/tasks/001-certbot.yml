@@ -16,4 +16,4 @@
     state: stopped
   
 - name: create certificates
-  command: certbot --agree-tos --nginx --keep-until-expiring --expand --email mxs@sbrk.org -d "{{ websites|map(attribute='domain')|join(',') }}"
+  command: certbot --agree-tos --nginx --keep-until-expiring --expand --email "{{ email_contact }}" -d "{{ websites|map(attribute='domain')|join(',') }}"

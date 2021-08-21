@@ -8,6 +8,8 @@ users:
   - ironzorg
   - notoriouspig
 
+email_contact: "mxs@sbrk.org"
+
 # Domains & services to manage.
 #
 # Config:
