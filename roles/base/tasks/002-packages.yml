@@ -24,3 +24,4 @@
       - libpam-systemd
       - ftp
       - netcat
+      - tig
