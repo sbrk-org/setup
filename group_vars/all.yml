@@ -65,11 +65,11 @@ websites:
     local_port: 10008
 
   - domain: matrix.sbrk.org
-    template_config: proxy_local_port.skeleton
+    template_config: matrix_nginx.skeleton
+    # NOTE: port 11002 is taken by Matrix federation traffic
     local_port: 11001
-    secure_headers: true
 
   - domain: matrix-web.sbrk.org
     template_config: proxy_local_port.skeleton
-    local_port: 11002
+    local_port: 11003
     secure_headers: true
