@@ -19,6 +19,7 @@
       - manpages-dev
       - mosh
       - netcat
+      - rsync
       - silversearcher-ag
       - sqlite3
       - tig
