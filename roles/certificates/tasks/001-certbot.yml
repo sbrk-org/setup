@@ -22,6 +22,10 @@
   ansible.builtin.systemd:
     name: nginx.service
     state: stopped
-  
-- name: create certificates
+
+- name: create website certificates
   command: certbot --agree-tos --nginx --keep-until-expiring --expand --email "{{ email_contact }}" -d "{{ websites|map(attribute='domain')|join(',') }}"
+
+- name: create service certificates
+  command: certbot --agree-tos --standalone --keep-until-expiring --expand --email "{{ email_contact }}" -d "{{ item.domain }}" certonly
+  loop: "{{ services }}"
