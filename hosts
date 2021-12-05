@@ -1,6 +1,6 @@
 [server]
 
-necromancer ansible_host=176.31.234.230 ansible_user=debian
+sbrk ansible_host=176.31.234.230 ansible_user=mxs
 
 [all:vars]
 
