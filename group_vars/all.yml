@@ -64,14 +64,6 @@ websites:
     template_config: proxy_local_port.skeleton
     local_port: 10008
 
-  - domain: dev.ambz.maethstro.art
-    template_config: proxy_local_port.skeleton
-    local_port: 10009
-
-  - domain: mumbai.ambz.maethstro.art
-    template_config: proxy_local_port.skeleton
-    local_port: 10010
-
   - domain: matrix.sbrk.org
     template_config: matrix_nginx.skeleton
     # NOTE: port 11002 is taken by Matrix federation traffic
