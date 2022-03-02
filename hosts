@@ -1,6 +1,6 @@
 [server]
 
-sbrk ansible_host=176.31.234.230 ansible_user=mxs
+sbrk ansible_host=sbrk.org ansible_user=debian
 
 [all:vars]
 
