@@ -74,6 +74,12 @@ websites:
     local_port: 11003
     secure_headers: true
 
+  - domain: git.sbrk.org
+    template_config: proxy_local_port.skeleton
+    # NOTE: port 11005 is taken by the Gitea SSH server
+    local_port: 11004
+    secure_headers: true
+
 # Unlike websites that are served by the HTTP server and whose configuration is
 # automatically modified, the services below are standalone
 services:
