@@ -64,6 +64,10 @@ websites:
     template_config: proxy_local_port.skeleton
     local_port: 10008
 
+  - domain: ftp.dkwe.sbrk.org
+    template_config: proxy_local_port.skeleton
+    local_port: 10009
+
   - domain: matrix.sbrk.org
     template_config: matrix_nginx.skeleton
     # NOTE: port 11002 is taken by Matrix federation traffic
